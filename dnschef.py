@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
+# This is the updated version from https://github.com/irsdl/dnschef_updated - updates are mainly from stalled PRs without any conflicts
 #
 # DNSChef is a highly configurable DNS Proxy for Penetration Testers 
 # and Malware Analysts. Please visit http://thesprawl.org/projects/dnschef/
 # for the latest version and documentation. Please forward all issues and
 # concerns to iphelix [at] thesprawl.org.
 
-DNSCHEF_VERSION = "0.4.1"
+DNSCHEF_VERSION = "0.5_unofficial"
 
 # Copyright (C) 2019 Peter Kacherginsky, Marcello Salvati
 # All rights reserved.
@@ -476,12 +477,15 @@ def start_cooking(interface, nametodns, nameservers, tcp=False, ipv6=False, port
 if __name__ == "__main__":
 
     header  = "          _                _          __  \n"
-    header += "         | | version %s  | |        / _| \n" % DNSCHEF_VERSION
+    header += "         | |              | |        / _| \n"
     header += "       __| |_ __  ___  ___| |__   ___| |_ \n"
     header += "      / _` | '_ \/ __|/ __| '_ \ / _ \  _|\n"
     header += "     | (_| | | | \__ \ (__| | | |  __/ |  \n"
     header += "      \__,_|_| |_|___/\___|_| |_|\___|_|  \n"
     header += "                   iphelix@thesprawl.org  \n"
+    header += "                   version %s \n"  % DNSCHEF_VERSION
+    
+    
 
     # Parse command line arguments
     parser = ArgumentParser(usage = "dnschef.py [options]:\n" + header, description="DNSChef is a highly configurable DNS Proxy for Penetration Testers and Malware Analysts. It is capable of fine configuration of which DNS replies to modify or to simply proxy with real responses. In order to take advantage of the tool you must either manually configure or poison DNS server entry to point to DNSChef. The tool requires root privileges to run on privileged ports." )

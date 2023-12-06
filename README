@@ -1,5 +1,11 @@
+This is the updated version from https://github.com/irsdl/dnschef_updated - updates are mainly from stalled PRs without any conflicts
+
+version 0.5_unofficial
+
+DNSChef
+======================
       _                _          __ 
-     | | version 0.4.1| |        / _|
+     | |              | |        / _|
    __| |_ __  ___  ___| |__   ___| |_ 
   / _` | '_ \/ __|/ __| '_ \ / _ \  _|
  | (_| | | | \__ \ (__| | | |  __/ |  
