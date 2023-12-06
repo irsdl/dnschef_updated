@@ -205,6 +205,16 @@ class DNSHandler():
                         kv_pairs = fake_record.split(" ")
                         mydata = RDMAP[qtype].fromZone(kv_pairs)
                         response.add_answer(RR(qname, getattr(QTYPE,qtype), rdata=mydata))
+                    
+                    elif qtype == "CAA":
+                        flags, tag, value = fake_record.split(" ")
+                        flags = int(flags)
+                        
+                        # dnslib doesn't like trailing dots
+                        if value[-1] == ".": value = value[:-1]
+                        
+                        # Create CAA record
+                        response.add_answer(RR(qname, getattr(QTYPE,qtype), rdata=RDMAP[qtype](flags, tag, value)))
 
                     else:
                         # dnslib doesn't like trailing dots
